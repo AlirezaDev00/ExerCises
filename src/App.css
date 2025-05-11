@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arimo;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+}
+
+input , button {
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  font-size: 18px;
+}
