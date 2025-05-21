@@ -1,4 +1,4 @@
-import React, { Profiler, useState } from "react";
+import { useState } from "react";
 
 function App() {
   const [users, setUsers] = useState([
@@ -8,25 +8,6 @@ function App() {
   ]);
 
   const [title, setTitle] = useState("");
-
-  const render_handler = (
-    id,
-    phase,
-    actualDuration,
-    baseDuration,
-    startTime,
-    commitTime
-  ) => {
-    console.log(
-      id,
-      phase,
-      actualDuration,
-      baseDuration,
-      startTime,
-      commitTime,
-      "rendered"
-    );
-  };
 
   return (
     <div>
@@ -38,13 +19,11 @@ function App() {
       />
 
       {users.map((user) => (
-        <Profiler key={user.id}  id="user_div" onRender={render_handler}>
-          <div>
-            <h3>
-              {user.id} - {user.name} - {user.age}
-            </h3>
-          </div>
-        </Profiler>
+        <div>
+          <h3>
+            {user.id} - {user.name} - {user.age}
+          </h3>
+        </div>
       ))}
     </div>
   );
